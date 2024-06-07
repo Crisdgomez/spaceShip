@@ -12,7 +12,14 @@ class Laser {
 
 	method mover() {
 		game.onTick(100, "moverLaser", { position = position.up(2)})
-		game.onCollideDo(self, { algo => algo.impactoLaser()})
+		game.onCollideDo(self, { algo =>
+			algo.impactoLaser()
+			self.impacto()
+		})
+	}
+
+	method impacto() {
+		game.removeVisual(self)
 	}
 
 }

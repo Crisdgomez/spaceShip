@@ -63,16 +63,18 @@ class EnemyShip {
 	}
 
 	method explotar() {
-		game.schedule(2000, { self.image("explosion-soldado.png")})
+		self.image("explosion-soldado.png")
 	}
 
 	method desaparecer() {
-		game.schedule(6000, { game.removeVisual(self)})
+		game.schedule(1000, { game.removeVisual(self)})
 	}
 
 	method impactoLaser() {
 		self.explotar()
 		self.desaparecer()
+		
+		
 	}
 
 }
