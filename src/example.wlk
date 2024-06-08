@@ -20,6 +20,8 @@ object juego {
 			game.addVisual(soldier)
 			game.onTick(1500, "moverSoldadoDer", { soldier.moverDerecha()})
 			game.onTick(750, "moverSoldadoIzq", { soldier.moverIzquierda()})
+			const randomInterval = 2000.randomUpTo(5000)
+			game.onTick(randomInterval, "enemyFire" + soldier.toString(), { soldier.disparar()})
 		}
 		game.start()
 	}

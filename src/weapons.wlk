@@ -10,8 +10,8 @@ class Laser {
 
 	method image() = image
 
-	method mover() {
-		game.onTick(100, "moverLaser", { position = position.up(2)})
+	method mover(direccion) {
+		game.onTick(100, "moverLaser", { position = if (direccion == "up") position.up(2) else position.down(2) })
 		game.onCollideDo(self, { algo =>
 			algo.impactoLaser()
 			self.impacto()
